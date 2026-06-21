@@ -1,0 +1,7 @@
+# Anomaly-detector training/evaluation profile.
+anomaly_detector:
+  detector: hybrid
+  wknn: {k: 15, weighting: inverse}
+  fnn: {hidden: [64, 32], dropout: 0.1, epochs: 120}
+  hybrid: {alpha: 0.6, fusion: confidence}
+dataset: {path: datasets/telemetry.csv}

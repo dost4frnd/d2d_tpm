@@ -1,0 +1,56 @@
+# Canonical default configuration for the PostQuantumEdge framework.
+# All experiment scripts also expose these as CLI flags; this file documents the
+# reference operating point used for the reported results.
+
+seed: 0
+
+tpm:
+  K: 3            # hidden units (tree parity machine)
+  N: 100          # inputs per hidden unit
+  L: 4            # weight range [-L, L]
+
+sync:
+  policy: early_confidence    # hash_only | early_confidence
+  max_steps: 4000
+  verify_every: 50            # baseline (hash_only) verification interval
+  conf_window: 40
+  conf_threshold: 0.98
+  min_streak: 25
+  key_bytes: 32
+  attacker_sync_overlap: 0.99
+
+attack:
+  kind: geometric             # none | geometric | majority
+  n_nets: 100                 # ensemble size for the majority attacker
+
+bifurcation:
+  scheme: "2of2"              # information-theoretic XOR (2,2) split
+  mtu: 1024
+  loss_prob: 0.05
+  n_pdus: 8
+  mc_trials: 3000
+
+anomaly_detector:
+  detector: hybrid            # wknn | fnn | hybrid
+  wknn:
+    k: 15
+    weighting: inverse
+  fnn:
+    hidden: [64, 32]
+    dropout: 0.1
+    lr: 0.001
+    weight_decay: 0.0001
+    epochs: 120
+    batch_size: 128
+    patience: 15
+  hybrid:
+    alpha: 0.6
+    fusion: confidence        # fixed | confidence
+
+dataset:
+  n_per_class: 1500
+  crypto_sessions: 48
+  transport_windows: 256
+  window: 8
+  label_noise: 0.03
+  path: datasets/telemetry.csv

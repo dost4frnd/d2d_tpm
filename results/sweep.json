@@ -1,0 +1,134 @@
+{
+  "alpha": [
+    {
+      "alpha": 0.0,
+      "macro_f1": 0.8957,
+      "roc_auc": 0.9719
+    },
+    {
+      "alpha": 0.2,
+      "macro_f1": 0.8975,
+      "roc_auc": 0.9741
+    },
+    {
+      "alpha": 0.4,
+      "macro_f1": 0.9042,
+      "roc_auc": 0.9747
+    },
+    {
+      "alpha": 0.5,
+      "macro_f1": 0.9023,
+      "roc_auc": 0.9756
+    },
+    {
+      "alpha": 0.6,
+      "macro_f1": 0.9046,
+      "roc_auc": 0.9756
+    },
+    {
+      "alpha": 0.8,
+      "macro_f1": 0.9009,
+      "roc_auc": 0.9768
+    },
+    {
+      "alpha": 1.0,
+      "macro_f1": 0.9046,
+      "roc_auc": 0.9765
+    }
+  ],
+  "k": [
+    {
+      "k": 3,
+      "macro_f1": 0.8677,
+      "roc_auc": 0.954
+    },
+    {
+      "k": 5,
+      "macro_f1": 0.8762,
+      "roc_auc": 0.965
+    },
+    {
+      "k": 9,
+      "macro_f1": 0.886,
+      "roc_auc": 0.9705
+    },
+    {
+      "k": 15,
+      "macro_f1": 0.8957,
+      "roc_auc": 0.9719
+    },
+    {
+      "k": 25,
+      "macro_f1": 0.889,
+      "roc_auc": 0.9718
+    },
+    {
+      "k": 41,
+      "macro_f1": 0.8879,
+      "roc_auc": 0.9732
+    }
+  ],
+  "tpm_N": [
+    {
+      "N": 40,
+      "mean_rounds": 463.9,
+      "key_agreement_rate": 1.0,
+      "attacker_success_geom": 0.65
+    },
+    {
+      "N": 60,
+      "mean_rounds": 490.1,
+      "key_agreement_rate": 1.0,
+      "attacker_success_geom": 0.3
+    },
+    {
+      "N": 80,
+      "mean_rounds": 513.9,
+      "key_agreement_rate": 1.0,
+      "attacker_success_geom": 0.4
+    },
+    {
+      "N": 100,
+      "mean_rounds": 531.5,
+      "key_agreement_rate": 1.0,
+      "attacker_success_geom": 0.4
+    }
+  ],
+  "threshold_TN": [
+    {
+      "T": 1,
+      "N": 5,
+      "confidentiality_threshold": 1,
+      "availability_margin": 4,
+      "availability": 0.9957
+    },
+    {
+      "T": 2,
+      "N": 5,
+      "confidentiality_threshold": 2,
+      "availability_margin": 3,
+      "availability": 0.9531
+    },
+    {
+      "T": 3,
+      "N": 5,
+      "confidentiality_threshold": 3,
+      "availability_margin": 2,
+      "availability": 0.7853
+    },
+    {
+      "T": 4,
+      "N": 5,
+      "confidentiality_threshold": 4,
+      "availability_margin": 1,
+      "availability": 0.4545
+    },
+    {
+      "T": 5,
+      "N": 5,
+      "confidentiality_threshold": 5,
+      "availability_margin": 0,
+      "availability": 0.1285
+    }
+  ]
+}

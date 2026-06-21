@@ -1,0 +1,41 @@
+# Monitoring + inference stack for the edge node.
+#
+# Brings up: (1) the anomaly-detector exporter (exposes Prometheus metrics on
+# :9108), (2) Prometheus (scrapes the exporter), (3) Grafana (dashboards).
+# On the Jetson, set `image:` of `detector` to the pqedge:jetson build.
+services:
+  detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pqedge:cpu
+    container_name: pqedge-detector
+    command: ["python", "deployment/monitoring/exporter.py", "--port", "9108"]
+    ports:
+      - "9108:9108"
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: pqedge-prometheus
+    volumes:
+      - ./deployment/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    depends_on:
+      - detector
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: pqedge-grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+    volumes:
+      - ./deployment/monitoring/grafana_dashboard.json:/var/lib/grafana/dashboards/pqedge.json:ro
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    restart: unless-stopped

@@ -1,0 +1,12 @@
+# Tunable (T,N) multi-carrier secret sharing (Shamir over GF(2^8)).
+# Confidentiality threshold = T (carriers an adversary must capture);
+# availability margin = N - T (carriers that may fail without data loss).
+bifurcation:
+  scheme: "TofN"
+  T: 2                # any T shares reconstruct; any T-1 reveal nothing
+  N: 3                # number of carriers/legs
+  mtu: 1024
+  loss_prob: 0.05     # independent per-PDU loss per leg
+  n_pdus: 8           # PDUs per share
+# Reference frontier (N=5, p=0.05, 8 PDUs/share):
+#   (1,5)=0.996  (2,5)=0.953  (3,5)=0.785  (4,5)=0.455  (5,5)=0.129

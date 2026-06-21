@@ -1,0 +1,11 @@
+# Prometheus scrape config for the PostQuantumEdge detector exporter.
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: "pqedge-detector"
+    static_configs:
+      - targets: ["detector:9108"]
+        labels:
+          node: "edge-orin-nano"

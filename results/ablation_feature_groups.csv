@@ -1,0 +1,4 @@
+feature_group,n_features,macro_f1,roc_auc
+crypto_only,4,0.4149,0.8262
+transport_only,5,0.5002,0.8615
+all_features,10,0.9095,0.9771

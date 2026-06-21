@@ -1,0 +1,7 @@
+# (2,2) split-bearer reliability profile.
+bifurcation:
+  scheme: "2of2"
+  mtu: 1024
+  loss_prob: 0.05
+  n_pdus: 8
+  mc_trials: 5000

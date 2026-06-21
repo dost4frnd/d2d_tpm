@@ -1,0 +1,64 @@
+{
+  "mlkem": [
+    {
+      "scheme": "ML-KEM-512",
+      "nist_level": 1,
+      "keygen_ms": 2.0736,
+      "encaps_ms": 3.0753,
+      "decaps_ms": 4.7694,
+      "establish_ms": 9.9183,
+      "ek_bytes": 800,
+      "dk_bytes": 1632,
+      "ct_bytes": 768,
+      "shared_bytes": 32,
+      "wire_bytes": 1568
+    },
+    {
+      "scheme": "ML-KEM-768",
+      "nist_level": 3,
+      "keygen_ms": 3.7902,
+      "encaps_ms": 4.6647,
+      "decaps_ms": 6.2942,
+      "establish_ms": 14.749,
+      "ek_bytes": 1184,
+      "dk_bytes": 2400,
+      "ct_bytes": 1088,
+      "shared_bytes": 32,
+      "wire_bytes": 2272
+    },
+    {
+      "scheme": "ML-KEM-1024",
+      "nist_level": 5,
+      "keygen_ms": 6.8603,
+      "encaps_ms": 6.5142,
+      "decaps_ms": 8.7982,
+      "establish_ms": 22.1727,
+      "ek_bytes": 1568,
+      "dk_bytes": 3168,
+      "ct_bytes": 1568,
+      "shared_bytes": 32,
+      "wire_bytes": 3136
+    }
+  ],
+  "tpm": {
+    "scheme": "TPM(K=3,N=80,L=4)",
+    "nist_level": null,
+    "establish_ms": 61.7686,
+    "p95_establish_ms": 92.5712,
+    "mean_rounds": 582.0,
+    "shared_bytes": 32,
+    "wire_bytes": 73,
+    "security_proof": false
+  },
+  "hybrid": {
+    "scheme": "Hybrid(ML-KEM-768 + TPM)",
+    "mlkem_establish_ms": 14.2369,
+    "tpm_establish_ms": 58.4577,
+    "kdf_ms": 0.00682,
+    "establish_ms": 72.7014,
+    "wire_bytes": 2345,
+    "shared_bytes": 32,
+    "security_floor": "ML-KEM-768",
+    "note": "security inherited from ML-KEM; TPM is defence-in-depth only"
+  }
+}

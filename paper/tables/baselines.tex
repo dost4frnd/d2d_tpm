@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Detector vs standard baselines on the grounded telemetry (mean$\pm$std macro-F1 over 3 seeds, all using both feature modalities). The hybrid matches the field on AUC; a McNemar test against the strongest baseline finds no significant gap ($p{=}0.08$), so the contribution is cross-modal fusion and integration, not classifier superiority.}
+\label{tab:baselines}
+\begin{tabular}{lcc}
+\toprule
+Model & Macro-F1 & ROC-AUC \\
+\midrule
+Random Forest & 0.901$\pm$0.004 & 0.974 \\
+SVM (RBF) & 0.903$\pm$0.010 & 0.973 \\
+Grad. Boosting & 0.888$\pm$0.010 & 0.974 \\
+Logistic Reg. & 0.898$\pm$0.013 & 0.976 \\
+WKNN & 0.888$\pm$0.008 & 0.973 \\
+FNN & 0.898$\pm$0.010 & 0.976 \\
+\textbf{Hybrid (ours)} & 0.896$\pm$0.010 & 0.976 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+{\footnotesize McNemar (hybrid vs logistic): $\chi^2{=}3.0625$, $p{=}0.0801$.}
+\end{table}

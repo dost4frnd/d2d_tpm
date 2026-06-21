@@ -1,0 +1,14 @@
+\begin{table}[t]
+\centering
+\caption{Detector ablations on the held-out test split. Left: architecture. Right: feature-group restriction (non-selected features zeroed). Neither cryptographic nor transport telemetry alone suffices; their fusion drives performance.}
+\label{tab:detector}
+\begin{tabular}{lcc@{\hskip 1.5em}lcc}
+\toprule
+Model & F1 & AUC & Features & F1 & AUC \\
+\midrule
+WKNN & 0.896 & 0.972 & Crypto & 0.415 & 0.826 \\
+FNN & 0.913 & 0.977 & Transport & 0.500 & 0.862 \\
+Hybrid & 0.906 & 0.977 & All & 0.909 & 0.977 \\
+\bottomrule
+\end{tabular}
+\end{table}

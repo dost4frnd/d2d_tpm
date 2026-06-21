@@ -1,0 +1,5 @@
+policy,conf_threshold,min_streak,mean_rounds,mean_verifications,attacker_success_geom
+hash_only,,,467.5,9.35,0.45
+early_confidence,0.95,15,510.5,2.6,0.4
+early_confidence,0.98,25,513.9,1.8,0.4
+early_confidence,0.99,35,513.9,1.8,0.4

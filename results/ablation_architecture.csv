@@ -1,0 +1,4 @@
+detector,macro_f1,accuracy,roc_auc
+wknn,0.8957,0.8967,0.9719
+fnn,0.9127,0.9133,0.9773
+hybrid,0.9059,0.9067,0.9767

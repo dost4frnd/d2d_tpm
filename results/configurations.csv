@@ -1,0 +1,6 @@
+config,early_termination,bifurcation,anomaly_detection,mean_rounds,mean_verifications,attacker_success_geometric,attacker_success_majority,availability_2of2,p95_latency_ms,detector_macro_f1,detector_auc
+C1_TPM_baseline,False,False,False,510.0,10.2,0.52,0.0,,,,
+C2_plus_early_termination,True,False,False,502.0,1.84,0.36,0.0,,,,
+C3_plus_bifurcation,True,True,False,502.0,1.84,0.36,0.0,0.44,12.8,,
+C4_plus_anomaly_detection,True,False,True,502.0,1.84,0.36,0.0,,,0.901,0.977
+C5_complete_framework,True,True,True,502.0,1.84,0.36,0.0,0.44,12.8,0.901,0.977

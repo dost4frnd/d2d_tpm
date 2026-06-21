@@ -1,0 +1,116 @@
+{
+  "repeated": {
+    "random_forest": {
+      "macro_f1": {
+        "mean": 0.9012,
+        "std": 0.0038
+      },
+      "accuracy": {
+        "mean": 0.9017,
+        "std": 0.0036
+      },
+      "roc_auc": {
+        "mean": 0.9741,
+        "std": 0.0028
+      }
+    },
+    "svm_rbf": {
+      "macro_f1": {
+        "mean": 0.9027,
+        "std": 0.0104
+      },
+      "accuracy": {
+        "mean": 0.9028,
+        "std": 0.0102
+      },
+      "roc_auc": {
+        "mean": 0.9734,
+        "std": 0.0041
+      }
+    },
+    "grad_boosting": {
+      "macro_f1": {
+        "mean": 0.8877,
+        "std": 0.01
+      },
+      "accuracy": {
+        "mean": 0.8883,
+        "std": 0.0095
+      },
+      "roc_auc": {
+        "mean": 0.9743,
+        "std": 0.0025
+      }
+    },
+    "logistic": {
+      "macro_f1": {
+        "mean": 0.8985,
+        "std": 0.0132
+      },
+      "accuracy": {
+        "mean": 0.8989,
+        "std": 0.0126
+      },
+      "roc_auc": {
+        "mean": 0.9761,
+        "std": 0.0029
+      }
+    },
+    "wknn": {
+      "macro_f1": {
+        "mean": 0.8882,
+        "std": 0.0081
+      },
+      "accuracy": {
+        "mean": 0.8889,
+        "std": 0.0077
+      },
+      "roc_auc": {
+        "mean": 0.9725,
+        "std": 0.0031
+      }
+    },
+    "fnn": {
+      "macro_f1": {
+        "mean": 0.8979,
+        "std": 0.0096
+      },
+      "accuracy": {
+        "mean": 0.8983,
+        "std": 0.0089
+      },
+      "roc_auc": {
+        "mean": 0.9758,
+        "std": 0.0032
+      }
+    },
+    "hybrid": {
+      "macro_f1": {
+        "mean": 0.8961,
+        "std": 0.0101
+      },
+      "accuracy": {
+        "mean": 0.8967,
+        "std": 0.0095
+      },
+      "roc_auc": {
+        "mean": 0.9757,
+        "std": 0.0019
+      }
+    }
+  },
+  "mcnemar": {
+    "best_baseline": "logistic",
+    "best_baseline_macro_f1": 0.9115,
+    "hybrid_macro_f1": 0.8976,
+    "b_hybrid_only_correct": 4,
+    "c_baseline_only_correct": 12,
+    "mcnemar_stat": 3.0625,
+    "p_value": 0.0801
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

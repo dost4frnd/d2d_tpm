@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Effect of privacy-preserving early termination versus fixed-interval verification, against the geometric eavesdropper ($K{=}3,N{=}100$). Rate-limited verification bounds the message count.}
+\label{tab:earlyterm}
+\begin{tabular}{lccc}
+\toprule
+Policy & Rounds & Verif. & Att.$_{geo}$ \\
+\midrule
+hash-only & 467.5 & 9.350 & 0.450 \\
+early ($\tau{=}0.95$) & 510.5 & 2.600 & 0.400 \\
+early ($\tau{=}0.98$) & 513.9 & 1.800 & 0.400 \\
+early ($\tau{=}0.99$) & 513.9 & 1.800 & 0.400 \\
+\bottomrule
+\end{tabular}
+\end{table}

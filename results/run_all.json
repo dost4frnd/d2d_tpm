@@ -1,0 +1,177 @@
+{
+  "crypto_baseline_hash_only": {
+    "none": {
+      "n_sessions": 25,
+      "policy": "hash_only",
+      "attack_kind": "none",
+      "sync_success_rate": 1.0,
+      "key_agreement_rate": 1.0,
+      "mean_rounds": 510.0,
+      "std_rounds": 148.9966442575134,
+      "median_rounds": 500.0,
+      "mean_post_sync_rounds": 27.24,
+      "mean_verifications": 10.2,
+      "attacker_success_rate": 0.0,
+      "mean_attacker_sync_step": null
+    },
+    "geometric": {
+      "n_sessions": 25,
+      "policy": "hash_only",
+      "attack_kind": "geometric",
+      "sync_success_rate": 1.0,
+      "key_agreement_rate": 1.0,
+      "mean_rounds": 510.0,
+      "std_rounds": 148.9966442575134,
+      "median_rounds": 500.0,
+      "mean_post_sync_rounds": 27.24,
+      "mean_verifications": 10.2,
+      "attacker_success_rate": 0.52,
+      "mean_attacker_sync_step": 442.6923076923077
+    },
+    "majority": {
+      "n_sessions": 25,
+      "policy": "hash_only",
+      "attack_kind": "majority",
+      "sync_success_rate": 1.0,
+      "key_agreement_rate": 1.0,
+      "mean_rounds": 510.0,
+      "std_rounds": 148.9966442575134,
+      "median_rounds": 500.0,
+      "mean_post_sync_rounds": 27.24,
+      "mean_verifications": 10.2,
+      "attacker_success_rate": 0.0,
+      "mean_attacker_sync_step": null
+    }
+  },
+  "crypto_early_confidence": {
+    "none": {
+      "n_sessions": 25,
+      "policy": "early_confidence",
+      "attack_kind": "none",
+      "sync_success_rate": 1.0,
+      "key_agreement_rate": 1.0,
+      "mean_rounds": 502.0,
+      "std_rounds": 113.04689292501585,
+      "median_rounds": 468.0,
+      "mean_post_sync_rounds": 25.0,
+      "mean_verifications": 1.84,
+      "attacker_success_rate": 0.0,
+      "mean_attacker_sync_step": null
+    },
+    "geometric": {
+      "n_sessions": 25,
+      "policy": "early_confidence",
+      "attack_kind": "geometric",
+      "sync_success_rate": 1.0,
+      "key_agreement_rate": 1.0,
+      "mean_rounds": 502.0,
+      "std_rounds": 113.04689292501585,
+      "median_rounds": 468.0,
+      "mean_post_sync_rounds": 25.0,
+      "mean_verifications": 1.84,
+      "attacker_success_rate": 0.36,
+      "mean_attacker_sync_step": 379.3333333333333
+    },
+    "majority": {
+      "n_sessions": 25,
+      "policy": "early_confidence",
+      "attack_kind": "majority",
+      "sync_success_rate": 1.0,
+      "key_agreement_rate": 1.0,
+      "mean_rounds": 502.0,
+      "std_rounds": 113.04689292501585,
+      "median_rounds": 468.0,
+      "mean_post_sync_rounds": 25.0,
+      "mean_verifications": 1.84,
+      "attacker_success_rate": 0.0,
+      "mean_attacker_sync_step": null
+    }
+  },
+  "bifurcation": {
+    "loss_prob": 0.05,
+    "n_pdus": 8,
+    "availability_single": 0.6634204312890623,
+    "availability_2of2": 0.44012666865176536,
+    "availability_duplicated": 0.8867141939263592,
+    "mc_availability_2of2": 0.4495,
+    "mc_mean_latency_ms": 11.043959481514404,
+    "mc_p95_latency_ms": 12.801169608768923
+  },
+  "detection_hybrid": {
+    "macro_f1": 0.9008208786401388,
+    "accuracy": 0.9016666666666666,
+    "roc_auc_macro_ovr": 0.977129230869576
+  },
+  "configurations": [
+    {
+      "config": "C1_TPM_baseline",
+      "early_termination": false,
+      "bifurcation": false,
+      "anomaly_detection": false,
+      "mean_rounds": 510.0,
+      "mean_verifications": 10.2,
+      "attacker_success_geometric": 0.52,
+      "attacker_success_majority": 0.0,
+      "availability_2of2": null,
+      "p95_latency_ms": null,
+      "detector_macro_f1": null,
+      "detector_auc": null
+    },
+    {
+      "config": "C2_plus_early_termination",
+      "early_termination": true,
+      "bifurcation": false,
+      "anomaly_detection": false,
+      "mean_rounds": 502.0,
+      "mean_verifications": 1.84,
+      "attacker_success_geometric": 0.36,
+      "attacker_success_majority": 0.0,
+      "availability_2of2": null,
+      "p95_latency_ms": null,
+      "detector_macro_f1": null,
+      "detector_auc": null
+    },
+    {
+      "config": "C3_plus_bifurcation",
+      "early_termination": true,
+      "bifurcation": true,
+      "anomaly_detection": false,
+      "mean_rounds": 502.0,
+      "mean_verifications": 1.84,
+      "attacker_success_geometric": 0.36,
+      "attacker_success_majority": 0.0,
+      "availability_2of2": 0.44,
+      "p95_latency_ms": 12.8,
+      "detector_macro_f1": null,
+      "detector_auc": null
+    },
+    {
+      "config": "C4_plus_anomaly_detection",
+      "early_termination": true,
+      "bifurcation": false,
+      "anomaly_detection": true,
+      "mean_rounds": 502.0,
+      "mean_verifications": 1.84,
+      "attacker_success_geometric": 0.36,
+      "attacker_success_majority": 0.0,
+      "availability_2of2": null,
+      "p95_latency_ms": null,
+      "detector_macro_f1": 0.901,
+      "detector_auc": 0.977
+    },
+    {
+      "config": "C5_complete_framework",
+      "early_termination": true,
+      "bifurcation": true,
+      "anomaly_detection": true,
+      "mean_rounds": 502.0,
+      "mean_verifications": 1.84,
+      "attacker_success_geometric": 0.36,
+      "attacker_success_majority": 0.0,
+      "availability_2of2": 0.44,
+      "p95_latency_ms": 12.8,
+      "detector_macro_f1": 0.901,
+      "detector_auc": 0.977
+    }
+  ]
+}

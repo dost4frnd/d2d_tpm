@@ -1,0 +1,15 @@
+# Post-quantum key-establishment profile.
+# ML-KEM provides the assured security floor (FIPS 203, Module-LWE, IND-CCA2).
+# The TPM secret is auxiliary/defence-in-depth only and is combined with the
+# ML-KEM secret via an SP 800-56C-style concatenation KDF (ML-KEM placed first).
+pqc:
+  mlkem_level: "ML-KEM-768"   # ML-KEM-512 | ML-KEM-768 | ML-KEM-1024
+                              # use 1024 where CNSA 2.0 compliance is required
+  hybrid:
+    enable: true              # combine ML-KEM + TPM secrets
+    kdf: "hkdf-sha256"        # concatenation KDF (NIST SP 800-56C style)
+    key_bytes: 32
+    label: "pqedge/hybrid-v1"
+benchmark:
+  iters: 200                  # per-operation timing iterations
+  note: "pure-Python reference timings are relative only; sizes are standardized"

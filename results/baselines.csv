@@ -1,0 +1,8 @@
+model,macro_f1_mean,macro_f1_std,accuracy_mean,roc_auc_mean
+Random Forest,0.9012,0.0038,0.9017,0.9741
+SVM (RBF),0.9027,0.0104,0.9028,0.9734
+Grad. Boosting,0.8877,0.01,0.8883,0.9743
+Logistic Reg.,0.8985,0.0132,0.8989,0.9761
+WKNN,0.8882,0.0081,0.8889,0.9725
+FNN,0.8979,0.0096,0.8983,0.9758
+Hybrid (ours),0.8961,0.0101,0.8967,0.9757

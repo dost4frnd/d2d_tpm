@@ -1,0 +1,37 @@
+{
+  "title": "PostQuantumEdge -- Edge Detector",
+  "schemaVersion": 39,
+  "editable": true,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Inference latency (s)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "targets": [{"expr": "pqedge_detector_inference_seconds", "legendFormat": "latency"}]
+    },
+    {
+      "type": "timeseries",
+      "title": "Per-class score",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "targets": [{"expr": "pqedge_detector_class_score", "legendFormat": "{{class}}"}]
+    },
+    {
+      "type": "stat",
+      "title": "Cumulative alerts (non-Normal)",
+      "gridPos": {"h": 8, "w": 6, "x": 0, "y": 8},
+      "targets": [{"expr": "pqedge_detector_alerts_total"}]
+    },
+    {
+      "type": "timeseries",
+      "title": "Node power (mW)",
+      "gridPos": {"h": 8, "w": 9, "x": 6, "y": 8},
+      "targets": [{"expr": "pqedge_node_power_mw", "legendFormat": "power_mW"}]
+    },
+    {
+      "type": "timeseries",
+      "title": "Node temperature (C)",
+      "gridPos": {"h": 8, "w": 9, "x": 15, "y": 8},
+      "targets": [{"expr": "pqedge_node_temp_c", "legendFormat": "temp_C"}]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# PostQuantumEdge -- Jetson Orin Nano (JetPack 6 / L4T r36) deployment image.
+#
+# HARDWARE TARGET (prototype, not validated in this repository's CI): NVIDIA
+# Jetson Orin Nano 8 GB. The base image ships CUDA, cuDNN and TensorRT for the
+# integrated Ampere GPU. PyTorch must be the NVIDIA-built aarch64 wheel that
+# matches the JetPack version (see the comment below) -- the pip CPU/x86 wheel
+# will NOT work on the Jetson GPU.
+#
+# Build ON the device (or with qemu/buildx for arm64):
+#   sudo docker build -f deployment/Dockerfile.jetson -t pqedge:jetson .
+FROM nvcr.io/nvidia/l4t-tensorrt:r10.3.0-runtime
+
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        python3-pip python3-dev libopenblas-dev libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install the JetPack-matched PyTorch wheel. Pick the URL for YOUR JetPack from
+# https://developer.download.nvidia.com/compute/redist/jp/ -- example only:
+#   pip3 install --no-cache https://developer.download.nvidia.com/compute/redist/jp/v60/pytorch/torch-2.3.0-cp310-cp310-linux_aarch64.whl
+# (left as a documented manual step because the exact wheel is JetPack-specific)
+
+COPY requirements.txt ./
+# torch is provided by the NVIDIA wheel above; install the rest from PyPI.
+RUN grep -v '^torch' requirements.txt > /tmp/req.txt \
+    && pip3 install --upgrade pip \
+    && pip3 install -r /tmp/req.txt
+
+COPY . .
+RUN pip3 install -e . --no-deps
+
+# Inference-serving entrypoint (TensorRT engine built at first run if absent).
+CMD ["python3", "deployment/tensorrt/serve_infer.py"]

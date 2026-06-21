@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Cumulative ablation of the framework components. Crypto columns use $K{=}3,N{=}100$; eavesdropper success is the operational (majority-vote) key-recovery rate; availability is the (2,2) reconstruction probability at per-PDU loss $p{=}0.05$.}
+\label{tab:configs}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+Config & Verif. & Att.$_{geo}$ & Att.$_{maj}$ & Avail. & F1 \\
+\midrule
+TPM baseline & 10.200 & 0.520 & 0.000 & -- & -- \\
++ Early term. & 1.840 & 0.360 & 0.000 & -- & -- \\
++ Bifurcation & 1.840 & 0.360 & 0.000 & 0.440 & -- \\
++ Anomaly det. & 1.840 & 0.360 & 0.000 & -- & 0.901 \\
+Complete & 1.840 & 0.360 & 0.000 & 0.440 & 0.901 \\
+\bottomrule
+\end{tabular}}
+\end{table}

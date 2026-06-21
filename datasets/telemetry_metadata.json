@@ -1,0 +1,197 @@
+{
+  "config": {
+    "n_per_class": 400,
+    "seed": 7,
+    "tpm_K": 3,
+    "tpm_N": 80,
+    "tpm_L": 4,
+    "crypto_sessions": 16,
+    "transport_windows": 96,
+    "window": 8,
+    "payload_bytes": 2048,
+    "flow_mean": 10.0,
+    "label_noise": 0.03,
+    "out": "datasets/telemetry.csv",
+    "meta_out": "datasets/telemetry_metadata.json"
+  },
+  "features": [
+    "tpm_convergence",
+    "sync_rate",
+    "match_probability",
+    "round_count",
+    "carrier_latency",
+    "packet_loss",
+    "throughput",
+    "jitter",
+    "share_reconstruction_failures",
+    "flow_stats"
+  ],
+  "classes": [
+    "Normal",
+    "GeometricAttack",
+    "MajorityAttack",
+    "TrafficAnomaly",
+    "CarrierDisruption",
+    "MultiStageAttack"
+  ],
+  "round_norm": 1000.0,
+  "label_noise_fraction": 0.03,
+  "label_noise_count": 72,
+  "clip_ranges": {
+    "tpm_convergence": [
+      0.0,
+      1.0
+    ],
+    "sync_rate": [
+      0.0,
+      1.0
+    ],
+    "match_probability": [
+      0.0,
+      1.0
+    ],
+    "round_count": [
+      0.0,
+      10.0
+    ],
+    "carrier_latency": [
+      0.1,
+      10000.0
+    ],
+    "packet_loss": [
+      0.0,
+      1.0
+    ],
+    "throughput": [
+      0.0,
+      10000.0
+    ],
+    "jitter": [
+      0.0,
+      1000.0
+    ],
+    "share_reconstruction_failures": [
+      0.0,
+      64.0
+    ],
+    "flow_stats": [
+      0.0,
+      1000.0
+    ]
+  },
+  "noise_spec": {
+    "crypto_overlap": 0.035,
+    "crypto_rate": 0.035,
+    "crypto_match": 0.04,
+    "crypto_round_frac": 0.12,
+    "latency_frac": 0.12,
+    "loss": 0.015,
+    "throughput_frac": 0.12,
+    "jitter_frac": 0.25,
+    "recon_fail": 0.8,
+    "flow": 0.22
+  },
+  "class_specs": {
+    "Normal": {
+      "name": "Normal",
+      "transport_pool": "nominal",
+      "match_probability_add": 0.0,
+      "tpm_convergence_add": 0.0,
+      "sync_rate_add": 0.0,
+      "round_count_mul": 1.0,
+      "latency_mul": 1.0,
+      "loss_add": 0.0,
+      "throughput_mul": 1.0,
+      "jitter_mul": 1.0,
+      "recon_fail_add": 0.0,
+      "flow_mul": 1.0
+    },
+    "GeometricAttack": {
+      "name": "GeometricAttack",
+      "transport_pool": "nominal",
+      "match_probability_add": -0.08,
+      "tpm_convergence_add": -0.03,
+      "sync_rate_add": -0.03,
+      "round_count_mul": 1.15,
+      "latency_mul": 1.0,
+      "loss_add": 0.0,
+      "throughput_mul": 1.0,
+      "jitter_mul": 1.0,
+      "recon_fail_add": 0.0,
+      "flow_mul": 1.4
+    },
+    "MajorityAttack": {
+      "name": "MajorityAttack",
+      "transport_pool": "nominal",
+      "match_probability_add": -0.15,
+      "tpm_convergence_add": -0.06,
+      "sync_rate_add": -0.06,
+      "round_count_mul": 1.3,
+      "latency_mul": 1.0,
+      "loss_add": 0.0,
+      "throughput_mul": 1.0,
+      "jitter_mul": 1.0,
+      "recon_fail_add": 0.0,
+      "flow_mul": 1.8
+    },
+    "TrafficAnomaly": {
+      "name": "TrafficAnomaly",
+      "transport_pool": "nominal",
+      "match_probability_add": 0.0,
+      "tpm_convergence_add": 0.0,
+      "sync_rate_add": 0.0,
+      "round_count_mul": 1.0,
+      "latency_mul": 1.0,
+      "loss_add": 0.0,
+      "throughput_mul": 0.7,
+      "jitter_mul": 1.6,
+      "recon_fail_add": 0.0,
+      "flow_mul": 3.0
+    },
+    "CarrierDisruption": {
+      "name": "CarrierDisruption",
+      "transport_pool": "disrupted",
+      "match_probability_add": 0.0,
+      "tpm_convergence_add": 0.0,
+      "sync_rate_add": 0.0,
+      "round_count_mul": 1.0,
+      "latency_mul": 1.2,
+      "loss_add": 0.0,
+      "throughput_mul": 1.0,
+      "jitter_mul": 1.0,
+      "recon_fail_add": 1.5,
+      "flow_mul": 1.0
+    },
+    "MultiStageAttack": {
+      "name": "MultiStageAttack",
+      "transport_pool": "disrupted",
+      "match_probability_add": -0.15,
+      "tpm_convergence_add": -0.06,
+      "sync_rate_add": -0.06,
+      "round_count_mul": 1.3,
+      "latency_mul": 1.2,
+      "loss_add": 0.0,
+      "throughput_mul": 1.0,
+      "jitter_mul": 1.0,
+      "recon_fail_add": 1.0,
+      "flow_mul": 2.5
+    }
+  },
+  "crypto_pool_stats": {
+    "n_sessions": 16,
+    "mean_convergence": 0.9999999999999983,
+    "mean_sync_rate": 0.6924561125519413,
+    "mean_match_probability": 1.0,
+    "mean_round_count": 494.375
+  },
+  "transport_nominal_stats": {
+    "mean_latency_ms": 11.21665886191177,
+    "mean_loss": 0.0146484375,
+    "mean_throughput_mbps": 182.07356770833334
+  },
+  "transport_disrupted_stats": {
+    "mean_latency_ms": 27.246704697554534,
+    "mean_loss": 0.09244791666666667,
+    "mean_throughput_mbps": 67.94921875
+  }
+}

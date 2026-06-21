@@ -1,0 +1,5 @@
+N,mean_rounds,key_agreement_rate,attacker_success_geom
+40,463.9,1.0,0.65
+60,490.1,1.0,0.3
+80,513.9,1.0,0.4
+100,531.5,1.0,0.4

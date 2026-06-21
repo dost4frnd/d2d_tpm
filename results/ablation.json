@@ -1,0 +1,76 @@
+{
+  "architecture": [
+    {
+      "detector": "wknn",
+      "macro_f1": 0.8957,
+      "accuracy": 0.8967,
+      "roc_auc": 0.9719
+    },
+    {
+      "detector": "fnn",
+      "macro_f1": 0.9127,
+      "accuracy": 0.9133,
+      "roc_auc": 0.9773
+    },
+    {
+      "detector": "hybrid",
+      "macro_f1": 0.9059,
+      "accuracy": 0.9067,
+      "roc_auc": 0.9767
+    }
+  ],
+  "feature_groups": [
+    {
+      "feature_group": "crypto_only",
+      "n_features": 4,
+      "macro_f1": 0.4149,
+      "roc_auc": 0.8262
+    },
+    {
+      "feature_group": "transport_only",
+      "n_features": 5,
+      "macro_f1": 0.5002,
+      "roc_auc": 0.8615
+    },
+    {
+      "feature_group": "all_features",
+      "n_features": 10,
+      "macro_f1": 0.9095,
+      "roc_auc": 0.9771
+    }
+  ],
+  "early_termination": [
+    {
+      "policy": "hash_only",
+      "conf_threshold": null,
+      "min_streak": null,
+      "mean_rounds": 467.5,
+      "mean_verifications": 9.35,
+      "attacker_success_geom": 0.45
+    },
+    {
+      "policy": "early_confidence",
+      "conf_threshold": 0.95,
+      "min_streak": 15,
+      "mean_rounds": 510.5,
+      "mean_verifications": 2.6,
+      "attacker_success_geom": 0.4
+    },
+    {
+      "policy": "early_confidence",
+      "conf_threshold": 0.98,
+      "min_streak": 25,
+      "mean_rounds": 513.9,
+      "mean_verifications": 1.8,
+      "attacker_success_geom": 0.4
+    },
+    {
+      "policy": "early_confidence",
+      "conf_threshold": 0.99,
+      "min_streak": 35,
+      "mean_rounds": 513.9,
+      "mean_verifications": 1.8,
+      "attacker_success_geom": 0.4
+    }
+  ]
+}

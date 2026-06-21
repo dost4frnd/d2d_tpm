@@ -1,0 +1,8 @@
+# TPM / synchronisation-only profile (security study).
+tpm: {K: 3, N: 100, L: 4}
+sync:
+  policy: early_confidence
+  conf_threshold: 0.98
+  min_streak: 25
+attack: {kind: geometric, n_nets: 100}
+n_sessions: 100

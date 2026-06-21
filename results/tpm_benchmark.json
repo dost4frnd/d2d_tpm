@@ -1,0 +1,11 @@
+{
+  "K": 3,
+  "N": 80,
+  "L": 4,
+  "ms_per_round": 0.05122,
+  "rounds_per_sec": 19521.8,
+  "mean_session_ms": 49.376,
+  "p95_session_ms": 67.909,
+  "mean_rounds": 521.25,
+  "key_bytes": 32
+}

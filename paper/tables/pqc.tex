@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Key establishment: standardized ML-KEM vs the TPM neural key-agreement candidate vs the hybrid. ML-KEM timings are a \emph{pure-Python reference} (relative only); byte sizes are standardized (FIPS~203). TPM's sole advantage is wire footprint; it carries no security proof.}
+\label{tab:pqc}
+\begin{tabular}{lcccc}
+\toprule
+Scheme & Estab. (ms) & Wire (B) & Secret (B) & Proof \\
+\midrule
+ML-KEM-512 & 9.918 & 1568 & 32 & yes \\
+ML-KEM-768 & 14.749 & 2272 & 32 & yes \\
+ML-KEM-1024 & 22.173 & 3136 & 32 & yes \\
+TPM(K=3,N=80,L=4) & 61.769 & 73 & 32 & no \\
+\midrule
+Hybrid (768+TPM) & 72.701 & 2345 & 32 & yes \\
+\bottomrule
+\end{tabular}
+\end{table}
