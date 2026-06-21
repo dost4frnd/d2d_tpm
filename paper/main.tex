@@ -20,14 +20,37 @@
 
 \begin{document}
 
-\title{Cross-Modal Machine-Learning Observability for\\ Post-Quantum Edge Communication: A Hybrid ML-KEM\\ and Neural-Synchronization Framework with Tunable\\ Multi-Carrier Secret Sharing}
+\title{Neural Synchronization Meets 5G Split Bearers: ML-KEM-Anchored Security for Resource-Constrained Edge Devices}
 
-\author{%
-\IEEEauthorblockN{Devesh Kumar}
-\IEEEauthorblockA{Department of Computer Science and Engineering\\
-Indian Institute of Technology Ropar\\
-Rupnagar, Punjab 140001, India\\
-devesh.kumar.csm2024@iitrpr.ac.in}}
+% \author{%
+% \IEEEauthorblockN{Devesh Kumar}
+% \IEEEauthorblockA{Department of Computer Science and Engineering\\
+% Indian Institute of Technology Ropar\\
+% Rupnagar, Punjab 140001, India\\
+% devesh.kumar.csm2024@iitrpr.ac.in}}
+
+% \author{
+% \IEEEauthorblockN{
+% Devesh Kumar,
+% Dr. S. K. Pal
+% }
+
+% \IEEEauthorblockA{
+% Defence Research and Development Organisation (DRDO), Delhi, India\\
+% Email: devesh.kumar.hqr@gov.in, saibal.pal@gov.in
+% }
+% }
+\author{
+\IEEEauthorblockN{
+Anonymous Author1,
+Anonymous Author2
+}
+
+\IEEEauthorblockA{
+Prepared for double-blind review\\
+Email: Prepared for double-blind review
+}
+}
 
 \maketitle
 
@@ -289,6 +312,11 @@ fusion path, and we flag that explicitly. Unless stated otherwise: $K{=}3$, $N{=
 $L{=}4$; security rates average over at least 25 decorrelated sessions; detection
 results use a stratified 75/25 split repeated over three seeds.
 
+\input{tables/pqc}
+
+\input{tables/configurations}
+\input{tables/earlyterm}
+
 % ============================================================
 \section{Results and Discussion}
 % ============================================================
@@ -307,7 +335,6 @@ replacement for ML-KEM. The hybrid costs roughly the sum of its parts (72.7\,ms 
 N\,=\,80), with an otherwise negligible KDF step, and inherits ML-KEM's guarantee
 unconditionally.
 
-\input{tables/pqc}
 
 \subsection{Early Termination and Security}
 
@@ -321,9 +348,6 @@ the count drops to 2.6; tightening to $\tau{=}0.98$ reaches 1.8 with no further
 change to attacker success, and the rate-limiting kicks in to keep it there.
 Without that cooldown, a prolonged high-confidence plateau before true weight
 equality would keep triggering the check and the savings would evaporate.
-
-\input{tables/configurations}
-\input{tables/earlyterm}
 
 The geometric eavesdropper still succeeds with non-negligible probability (${\sim}0.40$)
 at $K{=}3$---we do not hide that. The majority ensemble reaches high overlap but
@@ -449,7 +473,7 @@ what enables the detection, not any sophisticated architecture on top of it. The
 artifact---data generator, experiments, deployment path---is provided so these claims
 can be checked, not just read.
 
-\clearpage
+% \clearpage
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
